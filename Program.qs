@@ -6,6 +6,22 @@ namespace ExploringInterference {
     open Microsoft.Quantum.Measurement;
     
     @EntryPoint()
+    operation TestInterference3() : Unit {
+        use q = Qubit();
+        Y(q);
+        H(q);
+        DumpMachine();
+        Reset(q);
+    }
+
+    operation TestInterference2() : Unit {
+        use q = Qubit();
+        X(q); // Transform |0> into |1>.
+        H(q);
+        DumpMachine();
+        Reset(q);
+    }
+
     operation TestInterference1() : Result {
         use q = Qubit();
         Message(" ");
